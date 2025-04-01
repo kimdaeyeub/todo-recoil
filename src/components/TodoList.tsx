@@ -4,9 +4,9 @@ import TodoCard from "./TodoCard";
 
 const TodoList = () => {
   const todoList = useRecoilValue(todoListState);
-
+  console.log(todoList);
   return (
-    <div className="mt-4">
+    <div className="mt-4 space-y-3">
       {todoList.map((todo) => (
         <TodoCard
           key={todo.id}
