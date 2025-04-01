@@ -20,13 +20,19 @@ const TodoForm = () => {
   };
 
   return (
-    <div>
+    <div className="w-full flex justify-center gap-4 items-center">
       <input
         placeholder="Add your todo."
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        className="w-full outline-none border px-3 py-2 rounded-md border-gray-300 shadow-sm"
       />
-      <button onClick={onClickAddTodoBtn}>Submit</button>
+      <button
+        className="px-5 py-2 bg-black text-white rounded-md"
+        onClick={onClickAddTodoBtn}
+      >
+        Submit
+      </button>
     </div>
   );
 };

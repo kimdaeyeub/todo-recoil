@@ -1,14 +1,19 @@
-import React from "react";
 import { useRecoilValue } from "recoil";
 import { todoListState } from "../atom";
+import TodoCard from "./TodoCard";
 
 const TodoList = () => {
   const todoList = useRecoilValue(todoListState);
 
   return (
-    <div>
+    <div className="mt-4">
       {todoList.map((todo) => (
-        <div key={todo.id}>{todo.text}</div>
+        <TodoCard
+          key={todo.id}
+          title={todo.text}
+          id={todo.id}
+          isComplete={todo.isComplete}
+        />
       ))}
     </div>
   );
