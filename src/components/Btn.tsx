@@ -1,6 +1,15 @@
-const Btn = ({ mode }: { mode: "edit" | "delete" }) => {
+const Btn = ({
+  mode,
+  onClick,
+}: {
+  mode: "edit" | "delete";
+  onClick: () => void;
+}) => {
   return (
-    <div className="size-10 bg-gray-100 rounded-lg flex justify-center items-center">
+    <div
+      onClick={onClick}
+      className="size-10 bg-gray-100 rounded-lg flex justify-center items-center"
+    >
       {mode === "edit" ? (
         <svg
           data-slot="icon"

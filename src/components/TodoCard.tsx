@@ -23,7 +23,6 @@ const TodoCard = ({
     };
   };
   const toggleCompleteBtn = () => {
-    console.log("Toggle");
     const { before, after, targetIndex } = seperateTodoList();
     const currentState = todoList[targetIndex];
     setTodoList(() => [
@@ -36,6 +35,11 @@ const TodoCard = ({
       ...after,
     ]);
   };
+  const onClickDeleteBtn = () => {
+    const { before, after } = seperateTodoList();
+    setTodoList(() => [...before, ...after]);
+  };
+  const onClickEditBtn = () => {};
   return (
     <div className="flex w-full justify-between items-center bg-white px-4 py-5 rounded-md shadow-md">
       <div className="flex gap-3 items-center">
@@ -48,8 +52,8 @@ const TodoCard = ({
         <p>{title}</p>
       </div>
       <div className="flex gap-3 items-center">
-        <Btn mode="edit" />
-        <Btn mode="delete" />
+        <Btn mode="edit" onClick={onClickEditBtn} />
+        <Btn mode="delete" onClick={onClickDeleteBtn} />
       </div>
     </div>
   );
